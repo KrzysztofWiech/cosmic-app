@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-//Dto tworzymy po to żeby Json był ładniejszy dla frontendowca, mniej skomplikowany
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class PlanetDto {
 
-//uproszczenie obiektu bazodanowego, skopiowane z Planet i "oczyszczone"
+//uproszczenie obiektu bazodanowego
 
 
     private String planetName;

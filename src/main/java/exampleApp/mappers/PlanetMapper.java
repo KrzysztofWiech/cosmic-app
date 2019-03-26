@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-//bierze obiekt z bazy danych i przerabia go na co chcemy
-//jeśli nie mam dto to tego nie potrzebuje
 @Component
 public class PlanetMapper implements Mapper<Planet, PlanetDto> {
 

@@ -14,9 +14,6 @@ import java.util.Optional;
 public interface PlanetRepository extends JpaRepository<Planet, Long> {
 
 
-    //SQL, 1?-whild card,
-    // 1 to pierwszy argument od lewej danej metody
-
 //    @Query(value = "delete from planets where planet_name = ?1", nativeQuery = true)//SQL
 
     @Query(value = "delete from Planet p where p.planetName = ?1")//JPQL

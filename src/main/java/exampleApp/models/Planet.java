@@ -8,24 +8,18 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@NoArgsConstructor//gdy mamy buildera to tej adnotacji nie potrzebujemy
-@AllArgsConstructor//gdy mamy buildera to tej adnotacji nie potrzebujemy
-//@Data robi nam gett sett toString hashCode Equals
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
-//@Builder wzorzec projektowy, tworzy nam nową klasę która posiada metody nazwane tak samo jak zmienne
 @Builder
-//Entity baza danych mapuje na encje bazy danych
 @Entity
-//@Table tworzy nam tabelę o nazwie planets
 @Table(name = "planets")
 public class Planet {
 
-    //klucz główny, sztywna tabela
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //kolumny, unique - unikalny, nulltable - nie może być pusta
     @Column(name = "planet_name", unique = true, nullable = false)
     private String planetName;
 

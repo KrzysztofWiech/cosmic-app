@@ -18,7 +18,7 @@ public class UserApp {
 
     private String name;
     private String password;
-    private int active;//ala boolean
+    private int active;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
@@ -28,7 +28,6 @@ public class UserApp {
     )
     private Set<Role> roles;
 
-    //todo add constructor
     public UserApp(UserApp userApp) {//nie bierzemy Id, pobieramy metodami get poniważ idzie to z zewnątrz
         this.name = userApp.getName();
         this.password = userApp.getPassword();

@@ -5,6 +5,7 @@ import exampleApp.models.Planet;
 import exampleApp.models.dtos.PlanetDto;
 import exampleApp.repositories.PlanetRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,16 +42,6 @@ public class PlanetService {
 
     public List<PlanetDto> getPlanetsDto() {
 
-        // todo sposób 1
-//        List<PlanetDto> planetDtos = new ArrayList<>();
-//        planetRepository.findAll()
-//                .stream()
-//                .map(p -> planetDtos.add(planetMapper.map(p)))
-//                .collect(Collectors.toList());
-//        return planetDtos;
-
-
-        // sposób 2
         return planetRepository
                 .findAll()
                 .stream()
@@ -59,17 +50,14 @@ public class PlanetService {
 
     }
 
-    //dodawanie planety
     public Planet addPlanet(PlanetDto planetDto) {
         return planetRepository.save(planetMapper.revers(planetDto));
     }
 
-    //kasowanie planet
     public void deletePlanet(String planetName) {
         planetRepository.deleteByPlanetName(planetName);
     }
 
-    //aktualizowanie planet/czytamy od tyłu
     public void updatePlanet(PlanetDto planetDto) {
         planetRepository
                 .findByPlanetName(planetDto.getPlanetName())

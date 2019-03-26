@@ -14,7 +14,7 @@ import java.util.Set;
 //@Data
 @Getter
 @Setter
-@Builder // wzorzec projektowy pozwala tworzyć obiekty za pomocą metod a nie za pomocą konstruktora
+@Builder
 @Entity
 @Table(name = "tags")
 public class Tag {

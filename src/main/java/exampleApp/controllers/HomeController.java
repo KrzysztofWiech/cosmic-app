@@ -36,8 +36,7 @@ public class HomeController {
     }
 
 
-    //@GetMapping jest nowszą wersją @RequestMapping, "lepszą"
-    @PreAuthorize("hasRole('ADMIN')")// deklaruje jaki użytkownik może wejść/
+    @PreAuthorize("hasRole('ADMIN')")// deklaruje jaki użytkownik może wejść
     @GetMapping("/planets")
     public String getPlanetPage(Model model) {
         model.addAttribute("planets", planetService.getPlanetsDto());

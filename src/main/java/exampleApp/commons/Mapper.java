@@ -1,7 +1,5 @@
 package exampleApp.commons;
 
-import org.springframework.stereotype.Component;
-
 //@Component pozwala na wstrzykiwanie
 
 public interface Mapper<F, T> {
